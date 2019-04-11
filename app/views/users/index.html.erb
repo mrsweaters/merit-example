@@ -1,0 +1,11 @@
+<% props = {
+    users: ActiveModelSerializers::SerializableResource.new(
+      @users,
+      each_serializer: UserSerializer
+    )
+  }.to_json
+%>
+
+<div id="users" data="<%= props %>">
+  <app :users="users"></app>
+</div>
